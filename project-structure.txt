@@ -1,0 +1,41 @@
+.
+├── assets
+│   └── videos
+│       └── video.gif
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── project-structure.txt
+├── public
+│   └── vite.svg
+├── README.md
+├── src
+│   ├── App.css
+│   ├── App.jsx
+│   ├── assets
+│   │   └── react.svg
+│   ├── components
+│   │   ├── Card.jsx
+│   │   ├── Day.jsx
+│   │   ├── Details.jsx
+│   │   ├── Error.jsx
+│   │   ├── Forecast.jsx
+│   │   ├── Loading.jsx
+│   │   ├── Location.jsx
+│   │   ├── Search.jsx
+│   │   ├── SearchHistory.jsx
+│   │   └── Theme.jsx
+│   ├── context
+│   │   └── Wethercotext.jsx
+│   ├── hooks
+│   │   └── Weatherhook.js
+│   ├── index.css
+│   ├── main.jsx
+│   └── utils
+│       └── api.js
+├── tailwind.config.js
+└── vite.config.js
+
+10 directories, 29 files
