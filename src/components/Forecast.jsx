@@ -30,7 +30,7 @@ const Forecast = () => {
       {/* Video Background */}
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
-        src="/public/videos/icefall.mp4"
+        src="/videos/icefall.mp4"
         autoPlay
         loop
         muted

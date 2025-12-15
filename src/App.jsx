@@ -16,6 +16,7 @@ function App() {
       "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap",
       "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&display=swap",
       "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap",
     ];
 
     const linkElements = fontLinks.map((href) => {
@@ -41,25 +42,25 @@ function App() {
       <div className="relative min-h-screen overflow-hidden font-['Inter']">
         {/* 🎥 Background Video */}
         <video
-          className="absolute inset-0 w-full h-full object-cover -z-10"
-          src="/public/videos/waterdrop.mp4"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          src="/videos/waterdrop.mp4"
           autoPlay
           loop
           muted
           playsInline
         />
 
-        {/* Overlay (optional for readability, already matches your design) */}
-        <div className="absolute inset-0 bg-black/40 pointer-events-none"></div>
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-black/40 pointer-events-none z-0"></div>
 
-        <div className="relative flex flex-col items-center py-12 px-4 min-h-screen">
-          <div className="w-full max-w-6xl z-10 backdrop-blur-sm">
+        <div className="relative flex flex-col items-center py-12 px-4 min-h-screen z-10">
+          <div className="w-full max-w-6xl backdrop-blur-sm">
             {/* Header */}
             <div className="flex justify-between items-center gap-12 mb-10 p-4 bg-white/[0.12] rounded-xl backdrop-blur-md shadow-lg border border-white/[0.15] animate-fade-in">
               <h1
                 className="text-4xl sm:text-5xl font-extrabold text-white drop-shadow-md
-  hover:scale-105 transition-transform tracking-tight leading-none
-  font-['Noto_Sans_Devanagari']"
+                hover:scale-105 transition-transform tracking-tight leading-none
+                font-['Noto_Sans_Devanagari']"
               >
                 तापमान विश्लेषक
                 <span className="font-light opacity-90"></span>
