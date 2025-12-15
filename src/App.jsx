@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { WeatherProvider } from "./context/Wethercotext";
 import Search from "./components/Search";
 import Card from "./components/Card";
@@ -11,6 +11,9 @@ import { useWeatherContext } from "./context/Wethercotext";
 import "./App.css";
 
 function App() {
+  const [audio, setAudio] = useState(null);
+  const [isMuted, setIsMuted] = useState(false);
+
   useEffect(() => {
     const fontLinks = [
       "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap",
@@ -28,19 +31,39 @@ function App() {
 
     linkElements.forEach((link) => document.head.appendChild(link));
 
+    const newAudio = new Audio("/sounds/tapmaan.mp3");
+    newAudio.play().catch((err) => {
+      console.log("Audio playback failed:", err);
+    });
+    setAudio(newAudio);
+
     return () => {
       linkElements.forEach((link) => {
         if (document.head.contains(link)) {
           document.head.removeChild(link);
         }
       });
+      if (newAudio) {
+        newAudio.pause();
+        newAudio.currentTime = 0;
+      }
     };
   }, []);
+
+  const toggleMute = () => {
+    if (!audio) return;
+    if (isMuted) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+    setIsMuted(!isMuted);
+  };
 
   return (
     <WeatherProvider>
       <div className="relative min-h-screen overflow-hidden font-['Inter']">
-        {/* 🎥 Background Video */}
+        {/* Background Video */}
         <video
           className="absolute inset-0 w-full h-full object-cover z-0"
           src="/videos/waterdrop.mp4"
@@ -50,7 +73,7 @@ function App() {
           playsInline
         />
 
-        {/* Dark overlay for readability */}
+        {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/40 pointer-events-none z-0"></div>
 
         <div className="relative flex flex-col items-center py-12 px-4 min-h-screen z-10">
@@ -63,12 +86,8 @@ function App() {
                 font-['Noto_Sans_Devanagari']"
               >
                 तापमान विश्लेषक
-                <span className="font-light opacity-90"></span>
               </h1>
-
-              <div className="animate-bounce-subtle">
-                <Theme />
-              </div>
+              <Theme />
             </div>
 
             {/* Search */}
@@ -84,6 +103,14 @@ function App() {
             <DynamicContent />
           </div>
         </div>
+
+        {/* Simple Audio Button Top-Right */}
+        <button
+          onClick={toggleMute}
+          className="fixed top-4 right-4 z-50 text-white text-2xl"
+        >
+          {isMuted ? "🔇" : "🔊"}
+        </button>
       </div>
     </WeatherProvider>
   );

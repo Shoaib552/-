@@ -1,5 +1,6 @@
-# तापमान विश्लेषक (Weather Dashboard)
+<video src="public/videos/recording.mp4" controls autoplay muted loop playsinline></video>
 
+# तापमान विश्लेषक (Weather Dashboard)
 
 ## Overview
 
