@@ -1,8 +1,5 @@
 # तापमान विश्लेषक (Weather Dashboard)
 
-## Demo
-
-![Weather Dashboard Demo](./assets/videos/video.gif)
 
 ## Overview
 
