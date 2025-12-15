@@ -42,7 +42,7 @@ function App() {
         {/* 🎥 Background Video */}
         <video
           className="absolute inset-0 w-full h-full object-cover -z-10"
-          src="/assets/videos/waterdrop.mp4"
+          src="/public/videos/waterdrop.mp4"
           autoPlay
           loop
           muted
