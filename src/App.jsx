@@ -111,6 +111,50 @@ function App() {
         >
           {isMuted ? "🔇" : "🔊"}
         </button>
+
+        {/* Stylish Horizontal Footer */}
+        <footer className="relative z-10 mt-20 mb-4">
+          <div
+            className="
+      mx-auto max-w-4xl
+      flex flex-col sm:flex-row items-center justify-between
+      gap-4 px-6 py-4
+      bg-white/[0.12] backdrop-blur-md
+      border border-white/[0.15]
+      rounded-2xl shadow-lg
+      text-white/90
+    "
+          >
+            {/* Left: Made with Love */}
+            <p className="text-sm tracking-wide">
+              Made with <span className="text-red-400">❤️</span> by{" "}
+              <span className="font-semibold">Shoaib</span>
+            </p>
+
+            {/* Right: Social Links */}
+            <div className="flex items-center gap-6 text-sm">
+              <a
+                href="https://github.com/Shoaib552"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-all hover:scale-105"
+              >
+                GitHub
+              </a>
+
+              <span className="text-white/40">|</span>
+
+              <a
+                href="https://www.linkedin.com/feed/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-all hover:scale-105"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </footer>
       </div>
     </WeatherProvider>
   );
